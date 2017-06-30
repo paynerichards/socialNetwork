@@ -2,13 +2,19 @@
 <html>
 <head>
 	<title>Vine</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-	<h1 ><a href="/">Vine</a></h1>
-	<a href="/explore">Explore</a>
-	<a href="/community">Community</a>
+	<h1><a href="/">Vine</a></h1>
+	{{#if loggedIn}}
+		<div style="width: 100%; text-align: right">
+        	<a href="/users/logout">Logout</a>
+     	</div>
+
+	{{/if}}
 	{{{body}}}
+	
 
 </body>
 </html>

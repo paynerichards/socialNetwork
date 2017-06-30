@@ -1,7 +1,33 @@
-<div>
-	<img class="proPic" src="{{image}}">
-</div>
+<img src="{{image}}">
 
-<h1> {{ name }} </h1>
-<h2> {{location}} </h2>
-<h3> {{channel}} </h3>
+<h1>{{name}}</h1>
+<h2>{{hometown}}</h2>
+<h3>Favorites</h3>
+<ul>
+	<li>food: {{food}} </li>
+	<li>movie: {{movie}} </li>
+	<li>music: {{music}} </li>
+</ul>
+{{!-- {{#if loggedIn}}
+ --}}<form action="/posts" method="POST">
+	<input name="text" placeholder="What's going on?">
+	<input style="display: none" name="userId" value="{{id}}">
+	<button>Submit</button>
+</form>
+{{!-- {{/if}}
+ --}}
+<h3>Posts</h3>
+<ul>
+	{{#each posts}}
+		<li>
+				<p>{{this.text}}</p>
+		</li>
+	{{/each}}
+
+
+	
+
+</ul>
+
+<button id="deleteBut">Delete Profile</button>
+<input id="userId" style="display: none" value="{{id}}">
